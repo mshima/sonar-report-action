@@ -1,0 +1,26 @@
+{
+  "name": "sonar-report-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mshima/sonar-report-action.git"
+  },
+  "keywords": [],
+  "author": "Marcelo Shima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mshima/sonar-report-action/issues"
+  },
+  "homepage": "https://github.com/mshima/sonar-report-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.9.1",
+    "commander-github-actions": "0.1.0",
+    "sonar-report": "github:mshima/sonar-report#type_module"
+  }
+}

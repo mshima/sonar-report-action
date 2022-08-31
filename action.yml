@@ -1,107 +1,110 @@
 name: sonar-report-action
 author: Marcelo Shima
-description: description
+description: Sonar Report Github Action
 runs:
   using: node16
-  main: main.js
+  main: action/main.js
 inputs:
+  working-directory:
+    description: working directory
+    required: true
   http-proxy:
     description: the proxy to use to reach the sonarqube instance (http://<host>:<port>)
     required: false
   project:
     description: name of the project, displayed in the header of the generated report
-    required: true
+    required: false
   application:
     description: name of the application, displayed in the header of the generated report
-    required: true
+    required: false
   release:
     description: name of the release, displayed in the header of the generated report
-    required: true
+    required: false
   branch:
     description: Branch in Sonarqube that we want to get the issues for
-    required: true
+    required: false
   pullrequest:
     description: pull request ID in Sonarqube for which to get the issues/hotspots
-    required: true
+    required: false
   sonarurl:
     description: base URL of the SonarQube instance to query from
-    required: true
+    required: false
   sonarcomponent:
     description: id of the component to query from
-    required: true
+    required: false
   sonarusername:
     description: auth username
-    required: true
+    required: false
   sonarpassword:
     description: auth password
-    required: true
+    required: false
   sonartoken:
     description: auth token
-    required: true
+    required: false
   sonarorganization:
     description: name of the sonarcloud.io organization
-    required: true
+    required: false
   since-leak-period:
     description: flag to indicate if the reporting should be done since the last
       sonarqube leak period (delta analysis).
     required: false
-    default: false
+    default: "false"
   allbugs:
     description: flag to indicate if the report should contain all bugs, not only
       vulnerabilities.
     required: false
-    default: false
+    default: "false"
   fix-missing-rule:
     description: Extract rules without filtering on type (even if allbugs=false).
       Not useful if allbugs=true.
     required: false
-    default: false
+    default: "false"
   no-security-hotspot:
     description: Set this flag for old versions of sonarQube without security
       hotspots (<7.3).
     required: false
-    default: false
+    default: "false"
   link-issues:
     description: Set this flag to create links to Sonar from reported issues
     required: false
-    default: false
+    default: "false"
   quality-gate-status:
     description: Set this flag to include quality gate status in the report.
     required: false
-    default: false
+    default: "false"
   no-rules-in-report:
     description: Set this flag to omit "Known Security Rules" section from report.
     required: false
-    default: false
+    default: "false"
   vulnerability-phrase:
     description: Set to override 'Vulnerability' phrase in the report.
-    required: true
+    required: false
     default: Vulnerability
   vulnerability-plural-phrase:
     description: "Set to override 'Vulnerabilities' phrase in the report. "
-    required: true
+    required: false
     default: Vulnerabilities
   save-report-json:
     description: Save the report data in JSON format. Set to target file name
-    required: true
+    required: false
     default: ""
   sonar-properties-file:
     description: To use a sonar properties file.
-    required: true
+    required: false
     default: sonar-project.properties
   stylesheet-file:
     description: "CSS stylesheet file path. (default: provided stylesheet)"
-    required: true
+    required: false
   ejs-file:
     description: "EJS template file path. (default: built in template)"
-    required: true
+    required: false
     default: index.ejs
   no-ejs-file:
     description: Disable template file (print only the summary)
     required: false
   output:
     description: "Output report file path. (default: report.html)"
-    required: true
+    required: false
     default: report.html
   exit-code:
     description: Exit with non zero if issues were found

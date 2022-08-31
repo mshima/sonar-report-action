@@ -1,0 +1,12 @@
+{
+  "name": "bin",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "commander-github-actions": "github:mshima/commander-github-actions#v0.2.x",
+    "lodash": "^4.17.21",
+    "yaml": "^2.1.1"
+  }
+}

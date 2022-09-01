@@ -9,11 +9,6 @@ try {
     throw error;
   };
 
-  debug(process.cwd())
-
-  process.chdir(options.workingDirectory);
-
-  debug(process.cwd())
   debug('parsed options:');
   debug(options);
 

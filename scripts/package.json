@@ -5,7 +5,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "commander-github-actions": "github:mshima/commander-github-actions#v0.2.x",
+    "commander-github-actions": "0.2.1",
     "lodash": "^4.17.21",
     "yaml": "^2.1.1"
   }
